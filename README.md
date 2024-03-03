@@ -31,3 +31,15 @@ When Lambda function receives those parameters, it executes the mathematical ope
 a) Return the result to our front-end, where the result will be displayed on the calculator's screen.
 
 b) It will store in DynamoDB the numbers, the expression (mathmatical operation), result, and the timestamp where this calculation took place.
+
+--------------------------------------------------
+# Repository Structure:
+--------------------------------------------------
+In the repository, you can find the following files:
+- .py file: which needs to be configured in lambda function.
+- .txt file: This will contain a JSON IAM policy to allow Lambda function to access the DynamoDB.
+- .html file: This is our front-end web page which has some styling and javascript to handle API calls and displaying the operations on the calculator's screen.
+
+
+# Enjoy ... 😉
+
