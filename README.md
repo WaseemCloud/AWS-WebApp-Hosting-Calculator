@@ -15,6 +15,10 @@ In this tutorial, I will be using the following AWS services:
 - AWS Lambda Function
 - DynamoDB
 
+--------------------------------------------------
+# AWS Architecture:
+--------------------------------------------------
+
 
 
 
