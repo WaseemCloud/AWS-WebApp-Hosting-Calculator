@@ -6,5 +6,9 @@ The aim of this project is to demonstrate how to utilize different AWS services 
 
 https://www.youtube.com/watch?v=50swNYkvo3A&t=273s
 
+--------------------------------------------------
+# AWS Services:
+--------------------------------------------------
 
-🚀🚀
+
+
