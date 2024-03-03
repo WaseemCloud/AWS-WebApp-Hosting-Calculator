@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+
+    .calculator {
+      margin: 50px auto;
+      padding: 20px;
+      width: 300px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .calculator input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 24px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .calculator .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .calculator button {
+      padding: 15px;
+      font-size: 18px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      cursor: pointer;
+    }
+
+    .calculator button:hover {
+      background-color: #e0e0e0;
+    }
+	
+	h3{
+	color: Orange;
+	}
+  </style>
+</head>
+<body>
+  <div class="calculator">
+  <h3> Wasim's Calculator is live on AWS! </h3>
+    <input type="text" id="display" disabled>
+    <div class="buttons">
+	 <button onclick="appendCharacter('7')">7</button>
+      <button onclick="appendCharacter('8')">8</button>
+      <button onclick="appendCharacter('9')">9</button>
+      <button onclick="appendCharacter('/')">/</button>
+      <button onclick="appendCharacter('4')">4</button>
+      <button onclick="appendCharacter('5')">5</button>
+      <button onclick="appendCharacter('6')">6</button>
+      <button onclick="appendCharacter('*')">*</button>
+      <button onclick="appendCharacter('1')">1</button>
+      <button onclick="appendCharacter('2')">2</button>
+      <button onclick="appendCharacter('3')">3</button>
+      <button onclick="appendCharacter('-')">-</button>
+      <button onclick="appendCharacter('0')">0</button>
+      <button onclick="appendCharacter('.')">.</button>
+      <button onclick="calculate()">=</button>
+      <button onclick="appendCharacter('+')">+</button>
+      <button onclick="clearDisplay()">C</button>
+    </div>
+  </div>
+
+  <script>
+  
+   function appendCharacter(character) {
+      const display = document.getElementById('display');
+      display.value += character;
+    }
+	
+    async function calculate() {
+      const display = document.getElementById('display');
+      const expression = display.value;
+
+      try {
+        const response = await fetch('YOUR-AWS-API-KEY', {
+          method: 'POST',
+          headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        body: JSON.stringify({ expression })  // Wrap expression in a 'body' property
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error('Error calculating result.');
+    }
+
+    const data = await response.json();
+    console.log('Response data:', data);
+
+    const parsedData = JSON.parse(data.body);
+    if (parsedData && parsedData.result !== undefined) {
+      display.value = `Result: ${parsedData.result}`;
+    } else {
+      throw new Error('Result field is undefined or response is not in the expected format.');
+    }
+  } catch (error) {
+    display.value = `Error: ${error.message}`;
+  }
+}
+	
+	function clearDisplay() {
+      const display = document.getElementById('display');
+      display.value = '';
+    }
+  </script>
+</body>
+</html>
