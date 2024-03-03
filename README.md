@@ -19,6 +19,5 @@ In this tutorial, I will be using the following AWS services:
 # AWS Architecture:
 --------------------------------------------------
 
-
-
+![Archeticture](https://github.com/WaseemCloud/WebApp-Hosting-on-AWS/assets/157589909/97eadf66-4172-43cf-9d56-4c251f6089f9)
 
