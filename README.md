@@ -21,4 +21,5 @@ In this tutorial, I will be using the following AWS services:
 
 ![Archeticture](https://github.com/WaseemCloud/WebApp-Hosting-on-AWS/assets/157589909/97eadf66-4172-43cf-9d56-4c251f6089f9)
 
+
 We will be hosting our calculator web app (front-end) on AWS Amplify. Lambda function will act as our back-end and will be the brain of our application, where all the calculations are performed. Also, It will store the result in a database, where we will use DynamoDB in this case. 
