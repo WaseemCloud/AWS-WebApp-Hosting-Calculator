@@ -1,4 +1,4 @@
-# WebApp-Hosting-on-AWS
+# WebApp-Hosting-on-AWS 🚀🚀
 
 The aim of this project is to demonstrate how to utilize different AWS services to host a web application. A full step-by-step tutorial has been recorded and uploaded to my Youtube channel:
 
