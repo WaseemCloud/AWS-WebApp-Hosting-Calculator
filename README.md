@@ -21,5 +21,7 @@ In this tutorial, I will be using the following AWS services:
 
 ![Archeticture](https://github.com/WaseemCloud/WebApp-Hosting-on-AWS/assets/157589909/97eadf66-4172-43cf-9d56-4c251f6089f9)
 
-
-We will be hosting our calculator web app (front-end) on AWS Amplify. Lambda function will act as our back-end and will be the brain of our application, where all the calculations are performed. Also, It will store the result in a database, where we will use DynamoDB in this case. 
+--------------------------------------------------
+# Description:
+--------------------------------------------------
+We will be hosting our calculator web app (front-end) on AWS Amplify. Lambda function will act as our back-end and will be the brain of our application, where all the calculations are performed. Also, Lambda function will store the results in a database, where we will use DynamoDB in this case. In order to invoke our lambda function, we will need to use API Gateway to be the link between our front-end and back-end. In other words, as soon as we click on "calculate" button in our calculator, an API call "POST request" will be made to invoke our lambda function and it will also pass the mathematical operation parameters that need to be calculated. When Lambda function receives those parameters, it executes the 
