@@ -9,6 +9,12 @@ https://www.youtube.com/watch?v=50swNYkvo3A&t=273s
 --------------------------------------------------
 # AWS Services:
 --------------------------------------------------
+In this tutorial, I will be using the following AWS services:
+- AWS Amplify
+- AWS API Gateway
+- AWS Lambda Function
+- DynamoDB
+
 
 
 
