@@ -38,6 +38,24 @@ b) It will store in DynamoDB the numbers, the expression (mathmatical operation)
 In the repository, you can find the following files:
 - .py file: which needs to be configured in lambda function.
 - .txt file: This will contain a JSON IAM policy to allow Lambda function to access the DynamoDB.
+    {
+"Version": "2012-10-17",
+"Statement": [
+    {
+        "Sid": "VisualEditor0",
+        "Effect": "Allow",
+        "Action": [
+            "dynamodb:PutItem",
+            "dynamodb:DeleteItem",
+            "dynamodb:GetItem",
+            "dynamodb:Scan",
+            "dynamodb:Query",
+            "dynamodb:UpdateItem"
+        ],
+        "Resource": "YOUR-TABLE-ARN"
+    }
+    ]
+}
 - .html file: This is our front-end web page which has some styling and javascript to handle API calls and displaying the operations on the calculator's screen.
 
 
