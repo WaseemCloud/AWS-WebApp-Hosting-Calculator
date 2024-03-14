@@ -24,7 +24,7 @@ In this tutorial, I will be using the following AWS services:
 --------------------------------------------------
 # Description:
 --------------------------------------------------
-We will be hosting our calculator web app (front-end) on AWS Amplify. Lambda function will act as our back-end and will be the brain of our application, where all the calculations are performed. Also, Lambda function will store the results in a database, where we will use DynamoDB in this case. In order to invoke our lambda function, we will need to use API Gateway to be the link between our front-end and back-end. In other words, as soon as we click on "calculate" button in our calculator, an API call "POST request" will be made to invoke our lambda function and it will also pass the mathematical operation parameters that need to be calculated. 
+We will be hosting our calculator web app (front-end) on AWS Amplify. Lambda function will act as our back-end and will be the brain of our application, where all the calculations are performed. Also, Lambda function will store the results in a database, where we will use DynamoDB in this case. In order to invoke our lambda function, we will need to use API Gateway to be the link between our front-end and back-end. In other words, as soon as we click on "calculate" button in our calculator, an API call "POST request" will be made to invoke our lambda function and it will also pass the mathematical operation parameters that need to be calculated.
 
 When Lambda function receives those parameters, it executes the mathematical operations and does 2 actions:
 
@@ -38,24 +38,6 @@ b) It will store in DynamoDB the numbers, the expression (mathmatical operation)
 In the repository, you can find the following files:
 - .py file: which needs to be configured in lambda function.
 - .txt file: This will contain a JSON IAM policy to allow Lambda function to access the DynamoDB.
-    {
-"Version": "2012-10-17",
-"Statement": [
-    {
-        "Sid": "VisualEditor0",
-        "Effect": "Allow",
-        "Action": [
-            "dynamodb:PutItem",
-            "dynamodb:DeleteItem",
-            "dynamodb:GetItem",
-            "dynamodb:Scan",
-            "dynamodb:Query",
-            "dynamodb:UpdateItem"
-        ],
-        "Resource": "YOUR-TABLE-ARN"
-    }
-    ]
-}
 - .html file: This is our front-end web page which has some styling and javascript to handle API calls and displaying the operations on the calculator's screen.
 
 
